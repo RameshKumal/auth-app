@@ -56,7 +56,7 @@ const Dashboard = (props) => {
     }
   };
 
-  console.log(variants);
+
   return (
     <>
       <select onChange={onOptionChange}>
