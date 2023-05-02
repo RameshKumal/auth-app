@@ -1,0 +1,19 @@
+.navbar {
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  font-size: 25px;
+
+}
+
+.item-2 {
+  margin-left: 20px;
+  text-decoration: none;
+}
+.item-3, .item-4 {
+  margin-left: 20px;
+}
+.nav-link {
+  text-decoration: none;
+}
