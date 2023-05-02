@@ -25,7 +25,6 @@ const LoginForm = () => {
       ...errors,
       [e.target.name]: "",
     });
-    console.log(nextFormState);
   };
 
   // const phoneno = (e) => {
@@ -73,7 +72,7 @@ const LoginForm = () => {
       const response = await fetch("http://localhost:3001/auth/store", {
         method: "POST",
         mode: "cors",
-        credentials: 'include',
+        credentials: "include",
         headers: {
           Accept: "application/json",
           "Content-type": "application/json",
@@ -91,7 +90,7 @@ const LoginForm = () => {
       const response = await fetch("http://localhost:3001/auth/register", {
         method: "POST",
         mode: "cors",
-        credentials: 'include',
+        credentials: "include",
         headers: {
           Accept: "application/json",
           "Content-type": "application/json",
@@ -101,7 +100,6 @@ const LoginForm = () => {
 
       const data = await response.json();
       navigate("/login");
-      console.log("here", data);
     }
   };
 

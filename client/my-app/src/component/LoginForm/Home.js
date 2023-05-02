@@ -16,7 +16,6 @@ const Dashboard = (props) => {
     });
 
     const data = await response.json();
-    console.log(data);
     setStore(data);
   };
   /*get products variants */
@@ -38,7 +37,6 @@ const Dashboard = (props) => {
 
   const onOptionChange = async (e) => {
     let id = e.target.value;
-    console.log(id);
     const response = await fetch(
       `http://localhost:3001/auth/variant/getVariants/${id}`,
       {
@@ -48,14 +46,12 @@ const Dashboard = (props) => {
     );
 
     const data = await response.json(); //getting object in response
-    console.log(data);
     if (data) {
       setVariant([data]); //converting into array.
     } else {
       setVariant([]);
     }
   };
-
 
   return (
     <>

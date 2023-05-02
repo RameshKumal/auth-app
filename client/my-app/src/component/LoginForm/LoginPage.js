@@ -55,16 +55,14 @@ const LoginPage = () => {
     });
 
     const data = await response.json();
-    console.log(data);
-    if(!data.owner.storeOwner){
-      alert("Invalid credentials")
-    }else{
-      navigate("/Home", {state: { name : data.storeOwner }})
-    // navigate("/dashboard", {
-    //   state: { name: data.owner.storeOwner, id: data.owner.store_id },
-    // });
+    if (!data.owner.storeOwner) {
+      alert("Invalid credentials");
+    } else {
+      navigate("/Home", { state: { name: data.storeOwner } });
+      // navigate("/dashboard", {
+      //   state: { name: data.owner.storeOwner, id: data.owner.store_id },
+      // });
     }
-    
   };
   return (
     <>

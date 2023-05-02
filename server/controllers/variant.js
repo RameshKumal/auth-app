@@ -5,10 +5,8 @@ const Product = db.product;
 const getVariantsList = async (req, res) => {
   try {
     /* for list of product variant showing. */
-    console.log(req.params);
-    const id = req.params.id
-    const variant = await Variant.findOne({where : {product_id: id}});
-    console.log(variant);
+    const id = req.params.id;
+    const variant = await Variant.findOne({ where: { product_id: id } });
     res.status(200).json(variant);
   } catch (err) {
     res.status(404).json({ error: err.message });

@@ -15,7 +15,6 @@ const Dashboard = (props) => {
     });
 
     const data = await response.json();
-    console.log(data);
     setProduct(data);
   };
   /*get products variants */
@@ -37,7 +36,6 @@ const Dashboard = (props) => {
 
   const onOptionChange = async (e) => {
     let id = e.target.value;
-    console.log(id);
     const response = await fetch(
       `http://localhost:3001/auth/variant/getVariants/${id}`,
       {
@@ -90,7 +88,7 @@ const Dashboard = (props) => {
         </tbody>
       </table>
       <div>
-            <button> Add Product</button>
+        <button> Add Product</button>
       </div>
       {/* <UserDashboard userValue ={store}/>  */}
     </>
