@@ -18,8 +18,8 @@ const getListProducts = async (req, res) => {
 const getProducts = async (req, res) => {
   try {
     /* for particular Dasnboard showing. */
-    const { store_id } = req.params.store_id;
-    const product = await Product.findAll({ where: { id: store_id } });
+    const id = req.cookies["id"];
+    const product = await Product.findAll({ where: { store_id: id } });
     res.status(200).json(product);
   } catch (err) {
     res.status(404).json({ error: err.message });

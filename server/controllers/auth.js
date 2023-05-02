@@ -32,7 +32,8 @@ const login = async (req, res) => {
       password,
     } = req.body;
 
-    const owner = await store.findOne({ storeOwner: storeOwner });
+    const owner = await store.findOne({ where : {storeOwner: storeOwner} });
+    console.log(owner);
     if (!owner) return res.status(400).json({ msg: "Store does not exist." });
 
     const isMatch = await bcrypt.compare(password, owner.password);
@@ -44,16 +45,15 @@ const login = async (req, res) => {
     /*generating the token */
     const token = jwt.sign({ id: owner.store_id }, process.env.JWT_SECRET);
     console.log(token);
-    // res
-    //   .cookie("accessToken", token, {
-    //     expires: new Date("01 12 2021"), //3 seconds
-    //     httpOnly: false,
-    //     secure: false,
-    //     sameSite: "lax", //during development
-    //   })
+    res.cookie('id', owner.store_id)
+    res.cookie("accessToken", token, {
+      expires: new Date(Date.now() + 86000 * 24), //3 seconds
+      httpOnly: false,
+      secure: false,
+    });
     //   .status(200)
     //   .json({ owner });
-    // res.status(200).json({ owner , token });
+    res.status(200).json({ owner });
   } catch (err) {
     res.status(404).json({ error: err.message });
   }

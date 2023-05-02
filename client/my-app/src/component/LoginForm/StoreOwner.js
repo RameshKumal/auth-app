@@ -89,6 +89,9 @@ const Dashboard = (props) => {
           )}
         </tbody>
       </table>
+      <div>
+            <button> Add Product</button>
+      </div>
       {/* <UserDashboard userValue ={store}/>  */}
     </>
   );
