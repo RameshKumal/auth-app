@@ -5,6 +5,7 @@ module.exports = (sequelize, Sequelize) => {
       product_id: {
         type: Sequelize.INTEGER,
         primaryKey: true,
+        autoIncrement:true,
       },
       store_id: {
         type: Sequelize.INTEGER,

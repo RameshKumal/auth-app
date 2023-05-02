@@ -3,6 +3,7 @@ module.exports = (sequelize, Sequelize) => {
     variant_id: {
       type: Sequelize.INTEGER,
       primaryKey: true,
+      autoIncrement:true,
     },
     product_id: {
       type: Sequelize.INTEGER,

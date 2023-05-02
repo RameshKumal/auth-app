@@ -5,6 +5,7 @@ module.exports = (sequelize, Sequelize) => {
       store_id: {
         type: Sequelize.INTEGER,
         primaryKey: true,
+        autoIncrement:true,
       },
       storeOwner: {
         type: Sequelize.STRING,

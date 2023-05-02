@@ -35,6 +35,7 @@ db.sequelize = sequelize;
 db.store = require("../models/store")(sequelize, Sequelize);
 db.product = require("../models/product")(sequelize, Sequelize);
 db.variant = require("../models/variant")(sequelize, Sequelize);
+db.order = require("../models/order")(sequelize, Sequelize);
 
 db.store.hasMany(db.product, { foreignKey: "store_id" });
 db.product.belongsTo(db.store, { foreignKey: "store_id" });

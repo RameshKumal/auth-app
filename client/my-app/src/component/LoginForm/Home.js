@@ -52,7 +52,24 @@ const Dashboard = (props) => {
       setVariant([]);
     }
   };
-
+  const clickHandler = async (e) => {
+    // router.post("auth/product/buy/:id", verifyToken, buyOrder);
+    const id = e.target.value;
+    const response = await fetch(
+      `http://localhost:3001/auth/product/buy/${id}`,
+      {
+        method: "POST",
+        credentials: "include",
+      }
+    );
+    const data = await response.json(); //getting object in response
+    console.log(data);
+    // if (data) {
+    //   setVariant([data]); //converting into array.
+    // } else {
+    //   setVariant([]);
+    // }
+  };
   return (
     <>
       <select onChange={onOptionChange}>
@@ -73,6 +90,7 @@ const Dashboard = (props) => {
             <th>Variant Name</th>
             <th>Price</th>
             <th>options</th>
+            <th>order</th>
           </tr>
         </thead>
         <tbody>
@@ -83,6 +101,11 @@ const Dashboard = (props) => {
                 <td>{variant.title}</td>
                 <td>{variant.price}</td>
                 <td>{variant.option}</td>
+                <td>
+                  <button onClick={clickHandler} value={variant.variant_id}>
+                    Buy Order
+                  </button>
+                </td>
               </tr>
             ))
           ) : (

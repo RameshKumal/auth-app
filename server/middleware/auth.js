@@ -8,7 +8,6 @@ const verifyToken = (req, res, next) => {
     if (!token) {
       return res.status(403).send("Access denied.");
     }
-
     // token = token.slice(7, token.length).trimLeft();
     // token = token.split(" ")[1];
     // console.log(token);
@@ -16,7 +15,6 @@ const verifyToken = (req, res, next) => {
       if (err) {
         res.status(401).json({ result: "please provide the valid token" });
       } else {
-        console.log("here");
         next();
       }
     });
