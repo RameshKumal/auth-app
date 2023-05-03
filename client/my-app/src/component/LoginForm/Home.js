@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import CartPage from "../AddProduct/Product";
+import "./table.css"
 
 const Dashboard = (props) => {
   const [store, setStore] = useState(null);
@@ -81,6 +82,7 @@ const Dashboard = (props) => {
     <>
       {isOrder ? (
         <>
+          <h3>Product Details</h3>
           <select onChange={onOptionChange}>
             <option value="0">---select product---</option>
             {store?.map((item) => (
@@ -90,9 +92,9 @@ const Dashboard = (props) => {
             ))}
           </select>
           <br></br>
-          <h3>Various product variants </h3>
           <br></br>
-          <table className="table table-hover bg-se">
+          <div className="tableWrapper">
+          <table className="styled-table">
             <thead>
               <tr>
                 <th>Variant Id</th>
@@ -111,7 +113,7 @@ const Dashboard = (props) => {
                     <td>{variant.price}</td>
                     <td>{variant.option}</td>
                     <td>
-                      <button onClick={clickHandler} value={variant.variant_id}>
+                      <button className="btn-1" onClick={clickHandler} value={variant.variant_id}>
                         Buy Order
                       </button>
                     </td>
@@ -122,11 +124,12 @@ const Dashboard = (props) => {
               )}
             </tbody>
           </table>
+          </div>
         </>
       ) : (
         <div>
           <CartPage order={isBought}/>
-          <button onClick={cancelHandler}>Back to Home</button>
+          <button className="btn-2" onClick={cancelHandler}>Back to Home</button>
         </div>
       )}
     </>

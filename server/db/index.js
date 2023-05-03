@@ -36,9 +36,13 @@ db.store = require("../models/store")(sequelize, Sequelize);
 db.product = require("../models/product")(sequelize, Sequelize);
 db.variant = require("../models/variant")(sequelize, Sequelize);
 db.order = require("../models/order")(sequelize, Sequelize);
+db.orderInfo = require("../models/orderInfo")(sequelize, Sequelize);
 
 db.store.hasMany(db.product, { foreignKey: "store_id" });
 db.product.belongsTo(db.store, { foreignKey: "store_id" });
+
+db.store.hasMany(db.orderInfo, { foreignKey: "storeId" });
+db.orderInfo.belongsTo(db.store, { foreignKey: "storeIid" });
 
 db.product.hasMany(db.variant, { foreignKey: "product_id" });
 db.variant.belongsTo(db.product, { foreignKey: "product_id" });

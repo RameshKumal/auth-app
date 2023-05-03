@@ -63,13 +63,14 @@ const Dashboard = (props) => {
         ))}
       </select>
       <br></br>
-      <table className="table table-hover bg-se">
+      <div className="tableWrapper">
+      <table className="styled-table">
         <thead>
           <tr>
             <th>Variant Id</th>
             <th>Variant Name</th>
             <th>Price</th>
-            <th>options</th>
+            <th>Options</th>
           </tr>
         </thead>
         <tbody>
@@ -87,9 +88,10 @@ const Dashboard = (props) => {
           )}
         </tbody>
       </table>
-      <div>
-        <button> Add Product</button>
       </div>
+      {/* <div>
+        <button> Add Product</button>
+      </div> */}
       {/* <UserDashboard userValue ={store}/>  */}
     </>
   );
