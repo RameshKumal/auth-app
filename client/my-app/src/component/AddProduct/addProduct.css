@@ -1,0 +1,32 @@
+.new-expense__controls{
+    margin: 4rem 35rem;
+    border-radius: 12px;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
+    padding: 3rem 2rem;
+}
+.new-expense__control label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+.new-expense__control input {
+    font: inherit;
+    padding: 0.5rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    width: 20rem;
+    max-width: 100%;
+  }
+  .btn-new1 {
+    margin: 1rem 7px;
+    padding: 6px 18px;
+    border-radius: 5px;
+  }
+  .btn-new2{
+    margin: 1rem 12px;
+    padding: 6px 8px;
+    border-radius: 5px;
+  }
+.new-expense__actions {
+    text-align: left;
+  }

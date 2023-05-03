@@ -1,18 +1,18 @@
-.product{
-    margin: 1rem 35rem;
-    border-radius: 12px;
-    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
-    padding: 0 1.5rem;
+.product {
+  margin: 1rem 35rem;
+  border-radius: 12px;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
+  padding: 0 1.5rem;
 }
 
-.item{
-    padding: 0.5rem 1rem;
+.item {
+  padding: 0.5rem 1rem;
 }
 
-.btn-2{
-    margin-left: 40rem;
+.btn-2 {
+  margin-left: 40rem;
   padding: 10px 20px;
   border-radius: 5px;
-  background-color: #ADE4DB;
+  background-color: #ade4db;
   border: none;
 }

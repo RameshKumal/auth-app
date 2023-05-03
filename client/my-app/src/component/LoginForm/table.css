@@ -42,9 +42,13 @@
   color: #009879;
 }
 
-.btn-1 {
+.btn-1,
+.add-btn {
   padding: 10px 20px;
   border-radius: 5px;
   background-color: #ade4db;
   border: none;
+}
+.add-btn {
+  margin-left: 40rem;
 }

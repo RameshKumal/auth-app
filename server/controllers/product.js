@@ -28,10 +28,12 @@ const getProducts = async (req, res) => {
 
 const createProducts = async (req, res) => {
   try {
-    const { store_id, product_id, productName, handle } = req.body;
+    const store_id = req.cookies["id"];
+    console.log(req.body)
+    const { productName, handle } = req.body;
     const newProduct = await Product.create({
+      product_id: 7,
       store_id: store_id,
-      product_id: product_id,
       productName: productName,
       handle: handle,
     });
